@@ -24,6 +24,8 @@ chsh -s $(which zsh)
 git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && source install.sh
 ```
 
+Open a new terminal and have fun.
+
 ## Update
 
 ```sh
