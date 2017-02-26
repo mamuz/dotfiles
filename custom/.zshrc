@@ -52,7 +52,6 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=( \
     aws \
     branch \
-    brew \
     composer \
     docker \
     docker-compose \
@@ -61,10 +60,9 @@ plugins=( \
     github \
     go \
     golang \
-    iwhois \
     jsontools \
-    vundle \
     ssh-agent \
+    python \
 )
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
