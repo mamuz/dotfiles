@@ -31,3 +31,15 @@ Open a new terminal and have fun.
 ```sh
 cd ~/dotfiles && source install.sh
 ```
+
+## Appendix
+
+Current setup is optimized for:
+
+- aws cli
+- docker & docker-compose
+- tmux
+- go language
+- python
+- git & github
+- php composer
