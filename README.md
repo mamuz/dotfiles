@@ -6,19 +6,26 @@ Check https://github.com/webpro/awesome-dotfiles for introductions.
 
 ## Requirements
 
-- install zsh as a new shell: https://github.com/robbyrussell/oh-my-zsh
-- install powerlevel9k theme: https://github.com/bhilburn/powerlevel9k
-- install fonts for powerlevel9k theme https://github.com/powerline/fonts
+### OSX
+
+Install Homebrew and Git
+
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install git
+```
+
+### Ubuntu
+
+Install Git
+
+```sh
+sudo apt-get install git
+```
 
 ## Installation
 
-###  Set zsh as your default shell
-
-```sh
-chsh -s $(which zsh)
-```
-
-### Clone dotfiles to your home folder and run install script
+Clone dotfiles to your home folder and run install script
 
 ```sh
 git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && source install.sh
@@ -26,20 +33,6 @@ git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && sou
 
 Open a new terminal and have fun.
 
-## Update
-
-```sh
-cd ~/dotfiles && source install.sh
-```
-
 ## Appendix
 
-Current setup is optimized for:
-
-- aws cli
-- docker & docker-compose
-- tmux
-- go language
-- python
-- git & github
-- php composer
+This is optimized for MacOS and Ubuntu with Gnome:

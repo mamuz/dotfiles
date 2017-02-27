@@ -56,8 +56,8 @@ aws-list-regions() {
 
 aws-ssh-login() {
     eval `ssh-agent`
-    ssh-add ~/.ssh/aws-delta.pem
-    ssh -A ec2-user@${AWS_DEFAULT_REGION}.bastion.cluster.com
+    ssh-add ~/.ssh/aws.pem
+    ssh -A ec2-user@${AWS_DEFAULT_REGION}.${AWS_BASTION_DOMAIN}
 }
 
 # Determine size of a file or total size of a directory
