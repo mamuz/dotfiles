@@ -83,7 +83,7 @@
 
 [core]
 
-	# Use custom `.gitignore` and `.gitattributes`
+	# Use custom `.gitignore`
 	excludesfile = ~/.gitignore
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -98,6 +98,12 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+
+	autocrlf = input
+
+[commit]
+
+    template = ~/.gitmessage
 
 [color]
 
