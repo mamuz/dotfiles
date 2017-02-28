@@ -2,7 +2,7 @@
 
 sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get --yes --force-yes install vim curl wget jq jmeter python zsh \
+sudo apt-get --yes --force-yes install vim curl wget jq jmeter apache2-utils python zsh \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 sudo apt-get install -y --no-install-recommends \
