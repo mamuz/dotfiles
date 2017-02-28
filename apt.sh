@@ -29,4 +29,20 @@ if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 fi
 
-echo "Done. Don't forget to install Docker, Docker Compose, PhpStorm and Google Chrome Browser."
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
+sudo apt-get remove openjdk*
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install java-common oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+source /etc/profile
+wget https://download-cf.jetbrains.com/webide/PhpStorm-2016.1.2.tar.gz
+tar xvf PhpStorm-2016.1.2.tar.gz
+sudo mv PhpStorm-145.1616.3/ /opt/phpstorm/
+sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+
+echo "Done. Don't forget to install Docker, Docker Compose"
