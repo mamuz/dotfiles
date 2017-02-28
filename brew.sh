@@ -11,7 +11,7 @@ brew install zsh zsh-completions
 brew tap homebrew/versions
 
 if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+    echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
 fi;
 
 chsh -s /usr/local/bin/zsh;
@@ -31,8 +31,9 @@ brew cask install phpstorm
 brew cleanup
 brew cask cleanup
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
 
-echo "Check https://powerline.readthedocs.io/en/latest/installation/osx.html#fonts-installation for powerline fonts."
 echo "Done."
