@@ -2,10 +2,10 @@
 
 git pull origin master;
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then # GNU
-	source ./apt.sh
-else # macOS
+if [[ "$OSTYPE" = darwin* ]]; then
 	source ./brew.sh
+else
+    source ./apt.sh
 fi
 
-rsync -bavh --no-perms ./custom/.* ~;
+rsync -bavh --no-perms ./home/.* ~;

@@ -1,9 +1,11 @@
-export PATH=$HOME/bin:~/.local/bin:$PATH;
-
-for file in ~/.inc.*; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+zsh_display_awsenv() {
+    if [ -n "$AWS_DEFAULT_PROFILE" ]; then
+        echo -n "$AWS_DEFAULT_PROFILE";
+    fi
+    if [ -n "$AWS_DEFAULT_REGION" ]; then
+        echo -n "/$AWS_DEFAULT_REGION";
+    fi
+}
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -40,53 +42,3 @@ POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="012"
 POWERLEVEL9K_CUSTOM_AWS="zsh_display_awsenv"
 POWERLEVEL9K_CUSTOM_AWS_FOREGROUND="007"
 POWERLEVEL9K_CUSTOM_AWS_BACKGROUND="166"
-
-CASE_SENSITIVE="true"
-HIST_STAMPS="yyyy-mm-dd"
-
-# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
-plugins=( \
-    aws \
-    branch \
-    composer \
-    docker \
-    docker-compose \
-    git \
-    git-extras \
-    github \
-    go \
-    golang \
-    jsontools \
-    ssh-agent \
-    python \
-)
-
-if [ -f $ZSH/oh-my-zsh.sh ]; then
-    source $ZSH/oh-my-zsh.sh
-fi
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# Make vim the default editor.
-export EDITOR='vim';
-
-# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
-export PYTHONIOENCODING='UTF-8';
-
-# Increase Bash history size. Allow 32³ entries; the default is 500.
-export HISTSIZE='32768';
-export HISTFILESIZE="${HISTSIZE}";
-# Omit duplicates and commands that begin with a space from history.
-export HISTCONTROL='ignoreboth';
-
-# Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}";
-
-# Don’t clear the screen after quitting a manual page.
-export MANPAGER='less -X';

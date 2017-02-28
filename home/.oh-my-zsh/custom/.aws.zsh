@@ -1,14 +1,3 @@
-#!/usr/bin/env bash
-
-zsh_display_awsenv() {
-    if [ -n "$AWS_DEFAULT_PROFILE" ]; then
-        echo -n "$AWS_DEFAULT_PROFILE";
-    fi
-    if [ -n "$AWS_DEFAULT_REGION" ]; then
-        echo -n "/$AWS_DEFAULT_REGION";
-    fi
-}
-
 aws-load-region() {
     if [ "$1" = "ap-south-1" ] ; then
         export AWS_DEFAULT_REGION=$1
@@ -58,18 +47,4 @@ aws-ssh-login() {
     eval `ssh-agent`
     ssh-add ~/.ssh/aws.pem
     ssh -A ec2-user@${AWS_DEFAULT_REGION}.${AWS_BASTION_DOMAIN}
-}
-
-# Determine size of a file or total size of a directory
-function fs() {
-	if du -b /dev/null > /dev/null 2>&1; then
-		local arg=-sbh;
-	else
-		local arg=-sh;
-	fi
-	if [[ -n "$@" ]]; then
-		du $arg -- "$@";
-	else
-		du $arg .[^.]* ./*;
-	fi;
 }

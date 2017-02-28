@@ -17,7 +17,7 @@ chsh -s /usr/local/bin/zsh;
 brew install curl wget --with-iri
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
-brew install git-lfs tree tmux jmeter jq python awscli
+brew install git-lfs tree tmux jmeter jq python awscli terminal-notifier
 brew install docker docker-compose
 
 brew cleanup
