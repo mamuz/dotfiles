@@ -2,13 +2,10 @@
 
 sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get --yes --force-yes install vim curl wget jq jmeter apache2-utils python zsh \
+sudo apt-get -y install vim curl wget jq jmeter apache2-utils python zsh \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
-sudo apt-get install -y --no-install-recommends \
-    apt-transport-https ca-certificates software-properties-common
-
-sudo apt-get autoremove
+sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common
 
 python3 get-pip.py --user
 pip install awscli --upgrade --user
@@ -29,20 +26,37 @@ if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 fi
 
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    sudo apt-get update
+    sudo apt-get install -y google-chrome-stable
+fi
 
-sudo apt-get remove openjdk*
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install java-common oracle-java8-installer
-sudo apt-get install oracle-java8-set-default
-source /etc/profile
-wget https://download-cf.jetbrains.com/webide/PhpStorm-2016.1.2.tar.gz
-tar xvf PhpStorm-2016.1.2.tar.gz
-sudo mv PhpStorm-145.1616.3/ /opt/phpstorm/
-sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
+    sudo apt-get remove openjdk*
+    sudo add-apt-repository ppa:webupd8team/java
+    sudo apt-get update
+    sudo apt-get install java-common oracle-java8-installer
+    sudo apt-get install oracle-java8-set-default
+    source /etc/profile
+    wget https://download.jetbrains.com/webide/PhpStorm-2016.3.2.tar.gz
+    tar xvf PhpStorm-*.tar.gz
+    sudo mv PhpStorm-*/ /opt/phpstorm/
+    sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+fi
 
-echo "Done. Don't forget to install Docker, Docker Compose"
+if [ $(dpkg-query -W -f='${Status}' docker-engine 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"
+    sudo apt-get update
+    sudo apt-get install -y docker-engine
+    sudo usermod -aG docker $(whoami)
+fi
+
+if [ ! -f /usr/local/bin/docker-compose ]; then
+    curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+fi
+
+sudo apt-get autoremove

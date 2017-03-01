@@ -9,3 +9,5 @@ else
 fi
 
 rsync -bavh --no-perms ./home/.* ~
+
+echo "Done."
