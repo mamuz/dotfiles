@@ -2,7 +2,7 @@
 
 sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get -y install vim curl wget jq jmeter apache2-utils python zsh \
+sudo apt-get install -y vim curl wget jq jmeter apache2-utils python zsh \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common
@@ -37,8 +37,8 @@ if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
     sudo apt-get remove openjdk*
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
-    sudo apt-get install java-common oracle-java8-installer
-    sudo apt-get install oracle-java8-set-default
+    sudo apt-get install -y java-common oracle-java8-installer
+    sudo apt-get install -y oracle-java8-set-default
     source /etc/profile
     wget https://download.jetbrains.com/webide/PhpStorm-2016.3.2.tar.gz
     tar xvf PhpStorm-*.tar.gz
