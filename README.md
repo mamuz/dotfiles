@@ -33,6 +33,13 @@ git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && sou
 
 Open a new terminal and have fun.
 
+## Update 
+
+```sh
+cd ~/dotfiles && source install.sh
+```
+
 ## Appendix
 
-This is optimized for MacOS and Ubuntu with Gnome:
+This is optimized for MacOS/Ubuntu with Gnome and includes a dev environment
+based on zsh, tmux, google chrome browser, git, docker, aws and phpstorm.
