@@ -10,12 +10,6 @@ brew install gnu-sed --with-default-names
 brew install zsh zsh-completions
 brew tap homebrew/versions
 
-if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-    echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
-fi;
-
-chsh -s /usr/local/bin/zsh;
-
 brew install curl wget --with-iri
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
