@@ -8,6 +8,6 @@ else
     source ./apt.sh
 fi
 
-rsync --exclude ".DS_Store" -bavh --no-perms ./home/ ~
+cp -R --backup=numbered --suffix=_ ./home/.* ~
 
 echo "Done."
