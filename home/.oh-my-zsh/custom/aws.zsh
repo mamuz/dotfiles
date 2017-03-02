@@ -1,3 +1,7 @@
+export AWS_DEFAULT_PROFILE=default
+export AWS_DEFAULT_REGION=eu-west-1
+export AWS_BASTION_DOMAIN=
+
 aws-load-region() {
     if [ "$1" = "ap-south-1" ] ; then
         export AWS_DEFAULT_REGION=$1

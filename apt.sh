@@ -12,11 +12,6 @@ sudo pip install --upgrade pip
 sudo pip install --upgrade --user awscli
 rm ./get-pip.py
 
-if ! fgrep -q '/bin/zsh' /etc/shells; then
-  echo '/bin/zsh' | sudo tee -a /etc/shells;
-fi;
-chsh -s /bin/zsh;
-
 if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
