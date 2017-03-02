@@ -2,7 +2,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 if [[ "$OSTYPE" = darwin* ]]; then
   export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-  source .macos
+  # source .macos
 fi
 
 export ZSH=$HOME/.oh-my-zsh
