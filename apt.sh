@@ -1,26 +1,29 @@
 #!/usr/bin/env bash
 
-sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade
+sudo apt-get clean && sudo apt-get update && sudo apt-get -y upgrade
 
-sudo apt-get install -y vim curl wget jq jmeter apache2-utils python zsh \
+sudo apt-get install -y vim curl wget jq jmeter apache2-utils python3.4 zsh \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common
 
-python3 get-pip.py --user
-pip install awscli --upgrade --user
+curl -L -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user
+sudo pip install --upgrade pip
+sudo pip install --upgrade --user awscli
+rm ./get-pip.py
 
-if ! fgrep -q '/usr/local/bin/zsh' /etc/shells; then
-  echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+if ! fgrep -q '/bin/zsh' /etc/shells; then
+  echo '/bin/zsh' | sudo tee -a /etc/shells;
 fi;
-
-chsh -s /usr/local/bin/zsh;
+chsh -s /bin/zsh;
 
 if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+    mkdir ~/.fonts
+    mkdir -p ~/.config/fontconfig/conf.d
     mv PowerlineSymbols.otf ~/.fonts/
     fc-cache -vf ~/.fonts/
     mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
@@ -42,6 +45,7 @@ if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
     source /etc/profile
     wget https://download.jetbrains.com/webide/PhpStorm-2016.3.2.tar.gz
     tar xvf PhpStorm-*.tar.gz
+    rm xvf PhpStorm-*.tar.gz
     sudo mv PhpStorm-*/ /opt/phpstorm/
     sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
 fi
@@ -59,4 +63,4 @@ if [ ! -f /usr/local/bin/docker-compose ]; then
     chmod +x /usr/local/bin/docker-compose
 fi
 
-sudo apt-get autoremove
+sudo apt-get -y autoremove
