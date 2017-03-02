@@ -8,6 +8,6 @@ else
     source ./apt.sh
 fi
 
-rsync -bavh --no-perms ./home/.* ~
+rsync --exclude ".DS_Store" -bavh --no-perms ./home/ ~
 
 echo "Done."
