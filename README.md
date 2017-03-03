@@ -42,4 +42,4 @@ cd ~/dotfiles && source install.sh
 ## Appendix
 
 This is optimized for MacOS/Ubuntu with Gnome and includes a dev environment
-based on zsh, tmux, google chrome browser, git, docker, aws and phpstorm.
+based on zsh, tmux, vim, google chrome browser, git, docker, aws and phpstorm.
