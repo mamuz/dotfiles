@@ -1,8 +1,13 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
@@ -19,8 +24,8 @@ Plugin 'easymotion/vim-easymotion'
 " Plugin 'shawncplus/phpcomplete.vim'
 " Plugin 'othree/html5.vim'
 " Plugin 'pangloss/vim-javascript'
-
 call vundle#end()
+
 filetype plugin indent on
 
 " Brief help
