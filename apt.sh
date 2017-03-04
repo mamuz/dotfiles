@@ -46,8 +46,8 @@ if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
     sudo apt-get install -y oracle-java8-set-default
     source /etc/profile
     wget https://download.jetbrains.com/webide/PhpStorm-2016.3.2.tar.gz
-    tar xvf PhpStorm-*.tar.gz
-    rm xvf PhpStorm-*.tar.gz
+    tar -xvf PhpStorm-*.tar.gz
+    rm PhpStorm-*.tar.gz
     sudo mv PhpStorm-*/ /opt/phpstorm/
     sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
 fi

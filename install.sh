@@ -8,6 +8,6 @@ else
     source ./apt.sh
 fi
 
-cp -R --backup=numbered --suffix=_ ./home/.* ~
+cp -R -i --backup=numbered --suffix=_ ./home/.* ~
 
 echo "Done."
