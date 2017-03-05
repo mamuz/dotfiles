@@ -24,6 +24,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
 call vundle#end()
 
 filetype plugin indent on
