@@ -12,7 +12,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
-Plugin 'sjl/gundo.vim'
 Plugin 'nvie/vim-togglemouse'
 call vundle#end()
 
