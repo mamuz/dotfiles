@@ -16,9 +16,7 @@ sudo pip install --upgrade pip
 sudo pip install --upgrade --user awscli
 rm ./get-pip.py
 
-if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+if [ ! -f $HOME/.fonts/PowerlineSymbols.otf ]; then
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
     mkdir ~/.fonts
@@ -27,13 +25,6 @@ if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     fc-cache -vf ~/.fonts/
     mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 fi
-
-if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginUpdate +PluginClean +qall
-mkdir -p ~/.vim/colors
-cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
 
 if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -

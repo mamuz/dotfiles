@@ -36,7 +36,7 @@ Open a new terminal and have fun.
 ## Update 
 
 ```sh
-cd ~/dotfiles && source install.sh
+cd ~/dotfiles && source update.sh
 ```
 
 ## Appendix
