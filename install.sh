@@ -18,8 +18,11 @@ if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
 fi
 
 vim +PluginUpdate +PluginClean +qall
-mkdir -p ~/.vim/colors
-cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+
+if [ ! -f $HOME/.vim/colors/solarized.vim ]; then
+    mkdir -p $HOME/.vim/colors
+    cp $HOME/.vim/bundle/vim-colors-solarized/colors/solarized.vim $HOME/.vim/colors/
+fi
 
 cp -R -i --backup=numbered --suffix=_ ./home/.* ~
 echo "Done."

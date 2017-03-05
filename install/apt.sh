@@ -19,11 +19,11 @@ rm ./get-pip.py
 if [ ! -f $HOME/.fonts/PowerlineSymbols.otf ]; then
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-    mkdir ~/.fonts
-    mkdir -p ~/.config/fontconfig/conf.d
-    mv PowerlineSymbols.otf ~/.fonts/
-    fc-cache -vf ~/.fonts/
-    mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+    mkdir $HOME/.fonts
+    mkdir -p $HOME/.config/fontconfig/conf.d
+    mv PowerlineSymbols.otf $HOME/.fonts/
+    fc-cache -vf $HOME/.fonts/
+    mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d/
 fi
 
 if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
