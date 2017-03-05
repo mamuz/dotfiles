@@ -3,9 +3,9 @@
 git pull origin master
 
 if [[ "$OSTYPE" = darwin* ]]; then
-	source ./brew.sh
+	source ./install/brew.sh
 else
-    source ./apt.sh
+    source ./install/apt.sh
 fi
 
 if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
