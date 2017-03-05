@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+workingdir="$PWD"
+
 brew update
 brew upgrade
 brew install brew-cask
@@ -13,7 +15,7 @@ brew tap homebrew/versions
 brew install curl wget --with-iri
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
-brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier
+brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
 
 brew install docker docker-machine
 brew cask install docker-compose
@@ -36,3 +38,11 @@ fi
 vim +PluginInstall +qall
 mkdir -p ~/.vim/colors
 cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+
+mkdir ycm_build
+cd ycm_build
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+cmake --build . --target ycm_core
+cd .. && rm -rf ycm_build
+cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/tern_runtime && npm install --production
+cd "$workingdir"

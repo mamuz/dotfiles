@@ -2,10 +2,14 @@
 
 sudo apt-get clean && sudo apt-get update && sudo apt-get -y upgrade
 
-sudo apt-get install -y vim curl wget jq jmeter apache2-utils python3.4 zsh tmux \
+sudo apt-get install -y vim curl wget jq jmeter apache2-utils python3.4 zsh tmux exuberant-ctags \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common
+
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install -y git
 
 curl -L -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user
 sudo pip install --upgrade pip
@@ -27,7 +31,7 @@ fi
 if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-vim +PluginInstall +qall
+vim +PluginUpdate +PluginClean +qall
 mkdir -p ~/.vim/colors
 cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
 

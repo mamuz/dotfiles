@@ -34,12 +34,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'easymotion/vim-easymotion'
-" Plugin 'stanangeloff/php.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
-" Plugin 'othree/html5.vim'
-" Plugin 'pangloss/vim-javascript'
+Plugin 'stanangeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 filetype plugin indent on
