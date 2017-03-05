@@ -13,32 +13,17 @@ colorscheme solarized
 
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 nmap <F8> :TagbarToggle<CR>
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'stanangeloff/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 filetype plugin indent on
