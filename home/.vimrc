@@ -4,7 +4,7 @@ source ~/.vim/config/theme.vim
 source ~/.vim/config/ctrlp.vim
 source ~/.vim/config/mapping.vim
 
-autocmd vimenter * NERDTree
+autocmd VimEnter * NERDTree
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
