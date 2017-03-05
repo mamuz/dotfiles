@@ -35,14 +35,6 @@ fi
 if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-vim +PluginInstall +qall
+vim +PluginUpdate +PluginClean +qall
 mkdir -p ~/.vim/colors
 cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
-
-mkdir ycm_build
-cd ycm_build
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
-cmake --build . --target ycm_core
-cd .. && rm -rf ycm_build
-cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/tern_runtime && npm install --production
-cd "$workingdir"
