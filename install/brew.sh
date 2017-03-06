@@ -12,7 +12,7 @@ brew install gnu-sed --with-default-names
 brew install zsh zsh-completions
 brew tap homebrew/versions
 
-brew install curl wget --with-iri
+brew install htop-osx curl wget --with-iri
 brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
 brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
