@@ -17,12 +17,11 @@ brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
 brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
 
-brew install docker docker-machine
-brew cask install docker-compose
-
 brew cask install google-chrome
 brew cask install firefox
 brew cask install phpstorm
 
 brew cleanup
 brew cask cleanup
+
+echo "Install Docker For Mac from https://docs.docker.com/docker-for-mac/install/"
