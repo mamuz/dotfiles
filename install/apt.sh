@@ -52,6 +52,7 @@ if [ $(dpkg-query -W -f='${Status}' docker-engine 2>/dev/null | grep -c "ok inst
     sudo add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"
     sudo apt-get update
     sudo apt-get install -y docker-engine
+    sudo groupadd docker
     sudo usermod -aG docker $(whoami)
 fi
 
