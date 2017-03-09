@@ -21,7 +21,6 @@ brew cask install google-chrome
 brew cask install firefox
 brew cask install phpstorm
 brew cask install docker
-brew install docker-compose
 
 brew cleanup
 brew cask cleanup
