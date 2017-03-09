@@ -20,8 +20,8 @@ brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier cta
 brew cask install google-chrome
 brew cask install firefox
 brew cask install phpstorm
+brew cask install docker
+brew install docker-compose
 
 brew cleanup
 brew cask cleanup
-
-echo "Install Docker For Mac from https://docs.docker.com/docker-for-mac/install/"
