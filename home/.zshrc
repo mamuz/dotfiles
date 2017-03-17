@@ -8,7 +8,7 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 
 HYPHEN_INSENSITIVE="true"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
