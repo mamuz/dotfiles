@@ -10,4 +10,10 @@ Thumbs.db
 .Trashes
 .env
 .svn
-.cvs
+_svn
+CVS
+_darcs
+.arch-params
+.monotone
+.bzr
+.hg
