@@ -26,7 +26,7 @@ fi
 
 cp -R -i --backup=numbered --suffix=_ ./home/.* ~
 
-if [[ "$OSTYPE" = darwin* ]] && [[ ! `basename "$0"` = update.sh ]]; then
+if [[ "$OSTYPE" = darwin* ]]; then
     source ./home/.macos
 fi
 
