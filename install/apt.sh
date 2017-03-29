@@ -35,7 +35,7 @@ if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "
 fi
 
 if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
-    sudo apt-get remove openjdk*
+    sudo apt-get remove 'openjdk*'
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
     sudo apt-get install -y java-common oracle-java8-installer
@@ -45,7 +45,7 @@ if [ ! -f /opt/phpstorm/bin/phpstorm.sh ]; then
     tar -xvf PhpStorm-*.tar.gz
     rm PhpStorm-*.tar.gz
     sudo mv PhpStorm-*/ /opt/phpstorm/
-    sudo ln -s /opt/phpstorm/bin/phpstorm.sh /usr/local/bin/phpstorm
+    sudo ln -s /opt/phpstorm/bin/pipstorm.sh /usr/local/bin/phpstorm
 fi
 
 if [ $(dpkg-query -W -f='${Status}' docker-engine 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
