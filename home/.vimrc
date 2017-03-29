@@ -4,7 +4,8 @@ source ~/.vim/config/theme.vim
 source ~/.vim/config/ctrlp.vim
 source ~/.vim/config/mapping.vim
 
-autocmd VimEnter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
