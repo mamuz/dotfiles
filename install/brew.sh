@@ -17,10 +17,10 @@ brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
 brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
 
-brew cask install google-chrome
-brew cask install firefox
-brew cask install phpstorm
+brew cask install google-chrome firefox
+brew cask install mysqlworkbench sequel-pro phpstorm
 brew cask install docker
+brew cask install spectacle
 
 brew cleanup
 brew cask cleanup

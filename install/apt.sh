@@ -2,7 +2,8 @@
 
 sudo apt-get clean && sudo apt-get update && sudo apt-get -y upgrade
 
-sudo apt-get install -y vim curl wget jq jmeter apache2-utils python3.4 zsh tmux htop exuberant-ctags \
+sudo apt-get install -y vim curl wget jq jmeter mysql-workbench \
+    apache2-utils python3.4 zsh tmux htop exuberant-ctags \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common

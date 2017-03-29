@@ -3,7 +3,7 @@
 git pull origin master
 
 if [[ "$OSTYPE" = darwin* ]]; then
-	source ./install/brew.sh
+    source ./install/brew.sh
 else
     source ./install/apt.sh
 fi
@@ -25,4 +25,9 @@ if [ ! -f $HOME/.vim/colors/solarized.vim ]; then
 fi
 
 cp -R -i --backup=numbered --suffix=_ ./home/.* ~
+
+if [[ "$OSTYPE" = darwin* ]] && [[ ! `basename "$0"` = update.sh ]]; then
+    source ./home/.macos
+fi
+
 echo "Done."
