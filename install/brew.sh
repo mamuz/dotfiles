@@ -8,12 +8,13 @@ brew upgrade
 brew install coreutils moreutils findutils htop-osx
 brew install gnu-sed --with-default-names
 brew install zsh zsh-completions
-brew tap homebrew/versions
-
+brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
 brew install curl wget --with-iri
 brew install vim --with-override-system-vi --with-python --with-ruby --with-perl
+
+brew tap homebrew/versions
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
-brew install mtr git-lfs tree tmux jmeter jq python awscli terminal-notifier ctags
+
 
 brew cask install google-chrome firefox
 brew cask install mysqlworkbench sequel-pro phpstorm
