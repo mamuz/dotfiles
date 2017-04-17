@@ -12,9 +12,9 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-    aws bgnotify branch brew colored-man-pages command-not-found composer \
-    docker docker-compose dotenv extract gem git git-extras github \
-    jsontools last-working-dir ssh-agent python \
+    aws brew colored-man-pages \
+    docker docker-compose dotenv extract gem git \
+    last-working-dir python \
 )
 
 source $ZSH/oh-my-zsh.sh
