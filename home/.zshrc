@@ -23,7 +23,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR='vim'
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ARCHFLAGS="-arch x86_64"
 
 if [ "$TMUX" = "" ]; then tmux; fi
