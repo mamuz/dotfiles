@@ -40,8 +40,5 @@ fi
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-# Reload .zshrc
-alias rz="source $HOME/.zshrc"
-
 # Shortcuts
 alias www='cd $HOME/Projects'

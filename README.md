@@ -2,7 +2,6 @@ dotfiles
 ========
 
 Set up a unix system using dotfiles and an installation script.
-Check https://github.com/webpro/awesome-dotfiles for introductions.
 
 ## Requirements
 
@@ -31,9 +30,7 @@ Clone dotfiles to your home folder and run install script
 git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && source install.sh
 ```
 
-Open a new terminal and have fun.
-
-## Update 
+## Update
 
 ```sh
 cd ~/dotfiles && source update.sh
@@ -41,5 +38,5 @@ cd ~/dotfiles && source update.sh
 
 ## Appendix
 
-This is optimized for MacOS/Ubuntu with Gnome and includes a dev environment
-based on zsh, tmux, vim, google chrome browser, git, docker, aws and phpstorm.
+This is optimized for MacOS/Ubuntu+Gnome and includes a dev environment
+based on zsh, tmux, vim, google chrome, git, docker, aws, mysqlworkbench and phpstorm.
