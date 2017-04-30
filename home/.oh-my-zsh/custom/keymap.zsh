@@ -33,6 +33,7 @@ keymap-phpstorm() {
     print "| alt+enter              | solve problem / context-aware editing |"
     print "| ctrl+shift+a           | find actions                          |"
     print "| ctrl+b                 | jump to definition                    |"
+    print "| ctrl+g                 | jump to line                          |"
     print "| ctrl+alt+left OR right | navigate                              |"
     print "| ctrl+shift+v           | open clipboard                        |"
     print "| ctrl+w                 | smart selection                       |"
