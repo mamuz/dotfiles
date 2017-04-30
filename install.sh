@@ -19,7 +19,6 @@ if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
 fi
 
 cp -R -i ./home/.* ~
-exec $SHELL -l
 vim +PluginUpdate +PluginClean +qall
 
 if [ ! -f $HOME/.vim/colors/solarized.vim ]; then
@@ -32,3 +31,4 @@ if [[ "$OSTYPE" = darwin* ]]; then
 fi
 
 echo "Done."
+exec $SHELL -l
