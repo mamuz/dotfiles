@@ -12,10 +12,16 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install -y git
 
-curl -L -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user
+curl -LO https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user
 sudo pip install --upgrade pip
 sudo pip install --upgrade --user awscli
-rm ./get-pip.py
+rm get-pip.py
+
+curl -LO https://github.com/github/hub/releases/download/v2.3.0-pre9/hub-linux-amd64-2.3.0-pre9.tgz
+tar -xvf hub-linux-*.tgz
+sudo mv hub-linux-*/bin/hub /usr/local/bin/hub
+chmod +x /usr/local/bin/hub
+rm -rf hub-linux-*
 
 if [ ! -f $HOME/.fonts/PowerlineSymbols.otf ]; then
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf

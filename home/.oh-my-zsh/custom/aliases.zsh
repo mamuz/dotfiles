@@ -40,5 +40,8 @@ fi
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
+# Hub alias to git
+eval "$(hub alias -s)"
+
 # Shortcuts
 alias www='cd $HOME/Projects'
