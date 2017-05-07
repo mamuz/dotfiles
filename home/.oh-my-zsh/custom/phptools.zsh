@@ -40,6 +40,20 @@ phpcbf() {
        mamuz/php-analyzer phpcbf "$@"
 }
 
+phpcsfixer() {
+    tty=
+    tty -s && tty=--tty
+    docker run \
+       $tty \
+       --interactive \
+       --rm \
+       --user $(id -u):$(id -g) \
+       --volume /etc/passwd:/etc/passwd:ro \
+       --volume /etc/group:/etc/group:ro \
+       --volume $(pwd):/app \
+       mamuz/php-analyzer php-cs-fixer "$@"
+}
+
 phpmd() {
     tty=
     tty -s && tty=--tty
