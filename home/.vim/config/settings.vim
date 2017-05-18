@@ -1,7 +1,7 @@
 filetype indent on
 
 set number numberwidth=4
-set mouse=a
+set mouse=r
 set nobackup
 set noswapfile
 set tabstop=4
