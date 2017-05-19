@@ -32,19 +32,7 @@ aws-load-region() {
 }
 
 aws-list-regions() {
-    print "| Region Code    | Region Name               |"
-    print "| -------------- | ------------------------- |"
-    print "| us-east-1      | US East (N. Virginia)     |"
-    print "| us-west-2      | US West (Oregon)          |"
-    print "| us-west-1      | US West (N. California)   |"
-    print "| eu-west-1      | EU (Ireland)              |"
-    print "| eu-central-1   | EU (Frankfurt)            |"
-    print "| ap-southeast-1 | Asia Pacific (Singapore)  |"
-    print "| ap-northeast-1 | Asia Pacific (Tokyo)      |"
-    print "| ap-southeast-2 | Asia Pacific (Sydney)     |"
-    print "| ap-northeast-2 | Asia Pacific (Seoul)      |"
-    print "| ap-south-1     | Asia Pacific (Mumbai)     |"
-    print "| sa-east-1      | South America (São Paulo) |"
+    gist -r 88b1777fd7dd5534ebd17a6155e86816
 }
 
 aws-ssh-login() {

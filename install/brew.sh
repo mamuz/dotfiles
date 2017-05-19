@@ -5,7 +5,7 @@ sudo softwareupdate -i -a
 brew update
 brew upgrade
 
-brew install coreutils moreutils findutils htop-osx
+brew install coreutils moreutils findutils htop-osx gist
 brew install gnu-sed --with-default-names
 brew install mtr hub tree tmux jmeter jq python awscli ctags
 brew install curl wget --with-iri
