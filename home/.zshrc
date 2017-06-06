@@ -13,7 +13,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
     aws brew colored-man-pages \
-    docker docker-compose dotenv extract gem github \
+    docker docker-compose extract gem github \
     last-working-dir python \
 )
 
