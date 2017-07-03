@@ -7,7 +7,7 @@ brew upgrade
 
 brew install coreutils moreutils findutils htop-osx gist
 brew install gnu-sed --with-default-names
-brew install mtr hub tree tmux jmeter jq python awscli ctags
+brew install mtr hub tree tmux jmeter jq python awscli ctags git-standup
 brew install curl wget --with-iri
 brew install zsh zsh-completions
 brew install vim --with-override-system-vi --with-python --with-ruby --with-perl

@@ -67,4 +67,6 @@ if [ ! -f /usr/local/bin/docker-compose ]; then
     chmod +x /usr/local/bin/docker-compose
 fi
 
+curl -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh | sudo sh
+
 sudo apt-get -y autoremove
