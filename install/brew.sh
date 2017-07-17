@@ -30,3 +30,5 @@ if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
     cd ..
     rm -rf fonts
 fi
+
+sudo gem install travis -v 1.8.8 --no-rdoc --no-ri

@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
+sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get clean && sudo apt-get update && sudo apt-get -y upgrade
 
 sudo apt-get install -y vim curl wget jq jmeter mysql-workbench \
     apache2-utils python3.4 zsh tmux htop exuberant-ctags \
     linux-image-extra-$(uname -r) linux-image-extra-virtual
 
-sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common
+sudo apt-get install -y --no-install-recommends apt-transport-https ca-certificates software-properties-common \
+    python-software-properties ruby2.1 ruby-switch
 
-sudo add-apt-repository -y ppa:git-core/ppa
-sudo apt-get update
-sudo apt-get install -y git
+sudo ruby-switch --set ruby2.1
+sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
 
 curl -LO https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user
 sudo pip install --upgrade pip
