@@ -15,7 +15,7 @@ brew install vim --with-override-system-vi --with-python --with-ruby --with-perl
 brew tap homebrew/versions
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
 
-brew cask install google-chrome firefox github-desktop
+brew cask install google-chrome firefox github-desktop ccmenu
 brew cask install mysqlworkbench sequel-pro phpstorm
 brew cask install docker
 brew cask install spectacle
