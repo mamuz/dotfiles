@@ -18,7 +18,7 @@ alias week='date +%V'
 
 # Get Software Updates
 if [[ "$OSTYPE" = darwin* ]]; then
-    alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; sudo gem update --system; sudo gem update; sudo gem cleanup'
+    alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cask list | xargs brew cask install --force; brew cleanup; brew cask cleanup; sudo gem update --system; sudo gem update; sudo gem cleanup'
 else
     alias update='sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
 fi
