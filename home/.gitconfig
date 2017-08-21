@@ -48,6 +48,9 @@
 	# List contributors with number of LOCs
 	fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git --no-pager blame --line-porcelain HEAD | grep \"^author \"|sort|uniq -c|sort -nr"
 
+	# Create GitHub pull request with hub
+    pr = "!f() { git pull --rebase origin master && git pull-request -m $1}; f"
+
 	# Merge GitHub pull request on top of the current branch or,
 	# if a branch name is specified, on top of the specified branch
 	mpr = "!f() { \
