@@ -6,12 +6,6 @@
 	# View the current working tree status using the short format
 	s = status -s
 
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-
 	# Pull in remote changes for the current repository and all its submodules
 	p = !"git pull; git submodule foreach git pull origin master"
 
@@ -22,21 +16,12 @@
 	ca = !git add -A && git commit -av
 
 	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
-
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
 	# Remove the old tag with this name and tag the latest commit with it.
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
