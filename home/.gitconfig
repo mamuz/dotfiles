@@ -48,22 +48,22 @@
 	# List contributors with number of LOCs
 	fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git --no-pager blame --line-porcelain HEAD | grep \"^author \"|sort|uniq -c|sort -nr"
 
-	# Create GitHub pull request with hub
-    pr = "!f() { git pull --rebase origin master && git pull-request -m $1}; f"
+	# Create GitHub pull request with hub from current branch
+    pr = "!f() { git pull && git pull --rebase origin master && git push --force && git pull-request }; f"
 
-	# Merge GitHub pull request on top of the current branch or,
-	# if a branch name is specified, on top of the specified branch
+	# Merge GitHub pull request on top of master
 	mpr = "!f() { \
-		declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
-		declare branch=\"${2:-$currentBranch}\"; \
-		if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
-			git fetch origin refs/pull/$1/head:pr/$1 && \
-			git checkout -B $branch && \
-			git rebase $branch pr/$1 && \
-			git checkout -B $branch && \
-			git merge pr/$1 && \
-			git branch -D pr/$1 && \
-			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
+            git fetch \
+            && git checkout $1 \
+            && git pull --rebase origin master \
+            && git reset --soft master \
+            && git commit -a \
+            && git checkout master \
+            && git pull \
+            && git merge --no-ff $1 \
+            && git push \
+            && git branch -d $1 \
+            && git push origin --delete $1 \
 		fi \
 	}; f"
 
