@@ -51,16 +51,15 @@
 	# Create GitHub pull request with hub from current branch
     pr = "!f() { git pull && git pull --rebase origin master && git push --force && git pull-request }; f"
 
-	# Merge GitHub pull request on top of master
+	# Merge GitHub pull request $1 squashed with message $2 on top of master
 	mpr = "!f() { \
             git fetch \
             && git checkout $1 \
             && git pull --rebase origin master \
-            && git reset --soft master \
-            && git commit -a \
             && git checkout master \
             && git pull \
-            && git merge --no-ff $1 \
+            && git merge --squash $1 \
+            && git commit -m $2 \
             && git push \
             && git branch -d $1 \
             && git push origin --delete $1 \
