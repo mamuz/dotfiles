@@ -5,7 +5,7 @@ sudo softwareupdate -i -a
 brew update
 brew upgrade
 
-brew install coreutils moreutils findutils md5sha1sum htop-osx gist
+brew install ruby coreutils moreutils findutils md5sha1sum htop-osx gist
 brew install gnu-sed --with-default-names
 brew install mtr hub tree tmux jmeter jq python awscli ctags git-standup
 brew install curl wget --with-iri
@@ -32,3 +32,4 @@ if [ ! -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]; then
 fi
 
 sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
+sudo gem install git-fame

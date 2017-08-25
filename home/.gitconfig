@@ -45,9 +45,6 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
-	# List contributors with number of LOCs
-	fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git --no-pager blame --line-porcelain HEAD | grep \"^author \"|sort|uniq -c|sort -nr"
-
 	# Create GitHub pull request with hub from current branch
     pr = "!f() { git pull && git pull --rebase origin master && git push --force && git pull-request }; f"
 
