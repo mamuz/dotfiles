@@ -5,12 +5,13 @@ sudo softwareupdate -i -a
 brew update
 brew upgrade
 
-brew install ruby coreutils moreutils findutils md5sha1sum htop-osx gist
+brew install ruby node coreutils moreutils findutils md5sha1sum htop-osx gist
 brew install gnu-sed --with-default-names
 brew install mtr hub tree tmux jmeter jq python awscli ctags git-standup
 brew install curl wget --with-iri
 brew install zsh zsh-completions
 brew install vim --with-override-system-vi --with-python --with-ruby --with-perl
+brew brew install --HEAD homebrew/head-only/gitstats
 
 brew tap homebrew/versions
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
