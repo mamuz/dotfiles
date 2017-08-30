@@ -45,6 +45,9 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Rebase current branch on top of master
+	rb = "!f() { git pull && git pull --rebase origin master && git push --force }; f"
+
 	# Create GitHub pull request with hub from current branch
     pr = "!f() { git pull && git pull --rebase origin master && git push --force && git pull-request }; f"
 
