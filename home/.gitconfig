@@ -46,10 +46,10 @@
 	contributors = shortlog --summary --numbered
 
 	# Rebase current branch on top of master
-	rb = "!f() { git pull && git pull --rebase origin master && git push --force; }; f"
+	rb = "!f() { git pull && git pull --rebase origin master && git push --force origin HEAD; }; f"
 
 	# Create GitHub pull request with hub from current branch
-    pr = "!f() { git pull && git pull --rebase origin master && git push --force && git pull-request; }; f"
+    pr = "!f() { git pull && git pull --rebase origin master && git push --force origin HEAD && git pull-request; }; f"
 
 	# Merge GitHub pull request $1 squashed with message $2 on top of master
 	mpr = "!f() { \
