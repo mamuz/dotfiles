@@ -43,7 +43,10 @@
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# List contributors with number of commits
-	contributors = shortlog --summary --numbered
+	contributors = --no-pager shortlog --summary --numbered
+
+	# List contributors with number of LOCs
+    champ = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git --no-pager blame --line-porcelain HEAD | grep \"^author \"|sort|uniq -c|sort -nr"
 
 	# Rebase current branch on top of master
 	rb = "!f() { git pull && git pull --rebase origin master && git push --force origin HEAD; }; f"
