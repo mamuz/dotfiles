@@ -5,7 +5,7 @@ sudo softwareupdate -i -a
 brew update
 brew upgrade
 
-brew install ruby node coreutils moreutils findutils md5sha1sum htop-osx gist
+brew install ruby node coreutils moreutils findutils md5sha1sum htop gist
 brew install gnu-sed --with-default-names
 brew install mtr hub tree tmux jmeter jq python awscli ctags git-standup
 brew install curl wget --with-iri
@@ -20,6 +20,9 @@ brew cask install google-chrome firefox github-desktop
 brew cask install mysqlworkbench sequel-pro phpstorm
 brew cask install docker
 brew cask install spectacle
+
+brew install terraform
+brew cask install google-cloud-sdk
 
 brew cleanup
 brew cask cleanup

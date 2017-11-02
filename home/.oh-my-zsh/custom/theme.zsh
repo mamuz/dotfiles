@@ -7,13 +7,19 @@ zsh_custom_aws() {
     fi
 }
 
+zsh_custom_gcp() {
+    echo -n $(gcloud config get-value core/project);
+    echo -n "/"
+    echo -n $(gcloud config get-value compute/region);
+}
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_aws time)
-POWERLEVEL9K_CUSTOM_AWS="zsh_custom_aws"
-POWERLEVEL9K_CUSTOM_AWS_FOREGROUND="007"
-POWERLEVEL9K_CUSTOM_AWS_BACKGROUND="166"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_cloud time)
+POWERLEVEL9K_CUSTOM_CLOUD="zsh_custom_gcp"
+POWERLEVEL9K_CUSTOM_CLOUD_FOREGROUND="007"
+POWERLEVEL9K_CUSTOM_CLOUD_BACKGROUND="166"
 POWERLEVEL9K_DIR_HOME_FOREGROUND="007"
 POWERLEVEL9K_DIR_HOME_BACKGROUND="012"
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="007"
