@@ -21,7 +21,7 @@ brew cask install mysqlworkbench sequel-pro phpstorm
 brew cask install docker
 brew cask install spectacle
 
-brew install terraform
+brew install terraform kubectl
 brew cask install google-cloud-sdk
 
 brew cleanup
