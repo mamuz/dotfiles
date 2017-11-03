@@ -13,6 +13,8 @@ brew install zsh zsh-completions
 brew install vim --with-override-system-vi --with-python --with-ruby --with-perl
 brew brew install --HEAD homebrew/head-only/gitstats
 
+brew link --force gettext
+
 brew tap homebrew/versions
 brew install homebrew/dupes/grep homebrew/dupes/openssh homebrew/dupes/screen
 
