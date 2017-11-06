@@ -10,7 +10,7 @@ zsh_custom_aws() {
 zsh_custom_gcp() {
     echo -n $(gcloud config get-value core/project);
     echo -n "/"
-    echo -n $(gcloud config get-value compute/region);
+    echo -n $(gcloud config get-value compute/zone);
 }
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
