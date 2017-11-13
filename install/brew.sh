@@ -5,7 +5,7 @@ sudo softwareupdate -i -a
 brew update
 brew upgrade
 
-brew install ruby node coreutils moreutils findutils md5sha1sum htop gist gettext
+brew install ruby node coreutils moreutils findutils md5sha1sum htop gist gettext joe
 brew install gnu-sed --with-default-names
 brew install mtr hub tree tmux jmeter jq python awscli ctags git-standup
 brew install curl wget --with-iri
