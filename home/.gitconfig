@@ -18,6 +18,9 @@
 	# Switch to a branch, creating it if necessary
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
+	# Tag with this name and push it
+	put = "!f() { git push && git tag $1 && git push --tags; }; f"
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
