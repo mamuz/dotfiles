@@ -1,9 +1,5 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-if [[ "$OSTYPE" = darwin* ]]; then
-    export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-fi
-
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 HYPHEN_INSENSITIVE="true"
@@ -12,8 +8,8 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-    aws terraform brew colored-man-pages \
-    docker docker-compose extract gem github \
+    terraform brew colored-man-pages \
+    docker docker-compose extract github \
     last-working-dir python \
 )
 
@@ -27,10 +23,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ARCHFLAGS="-arch x86_64"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-if [[ "$OSTYPE" = darwin* ]]; then
-    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-    source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
-fi
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 if [ "$TMUX" = "" ]; then tmux; fi
-
