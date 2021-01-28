@@ -1,25 +1,15 @@
 dotfiles
 ========
 
-Set up a unix system using dotfiles and an installation script.
+Set up a unix system on MacOS using dotfiles and an installation script.
 
 ## Requirements
-
-### OSX
 
 Install Homebrew and Git
 
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install git
-```
-
-### Ubuntu
-
-Install Git
-
-```sh
-sudo apt-get install git
 ```
 
 ## Installation
@@ -35,8 +25,3 @@ git clone git://github.com/mamuz/dotfiles.git ~/dotfiles && cd ~/dotfiles && sou
 ```sh
 cd ~/dotfiles && source update.sh
 ```
-
-## Appendix
-
-This is optimized for MacOS/Ubuntu+Gnome and includes a dev environment
-based on zsh, tmux, vim, google chrome, git, docker, aws, mysqlworkbench and phpstorm.
