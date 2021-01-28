@@ -17,7 +17,7 @@ alias mkdir='mkdir -pv'
 alias week='date +%V'
 
 # Get Software Updates
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cask list | xargs brew cask install --force; brew cleanup; brew cask cleanup; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade;'
 
 # Empty the Trash on all mounted volumes and the main HDD.
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
