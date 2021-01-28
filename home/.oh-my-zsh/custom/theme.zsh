@@ -1,12 +1,3 @@
-zsh_custom_aws() {
-    if [ -n "$AWS_DEFAULT_PROFILE" ]; then
-        echo -n "$AWS_DEFAULT_PROFILE";
-    fi
-    if [ -n "$AWS_DEFAULT_REGION" ]; then
-        echo -n "/$AWS_DEFAULT_REGION";
-    fi
-}
-
 zsh_custom_gcp() {
     echo -n $(gcloud config get-value core/project);
     echo -n "/"
